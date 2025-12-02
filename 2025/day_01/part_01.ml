@@ -31,10 +31,16 @@ end
 
 type combination = { direction : Direction.t; distance : int }
 
+(* computes the modulo, OCaml's mod computes the integer remainder *)
+let modulo x y =
+  let result = x mod y in
+  if result >= 0 then result
+  else result + y
+
 let spin_dial acc { direction; distance } =
   match direction with
-  | Direction.Left -> (acc + distance) mod 100
-  | Direction.Right -> (acc - distance) mod 100
+  | Direction.Left -> modulo (acc - distance) 100
+  | Direction.Right -> modulo (acc + distance) 100
 
 let split_at (idx : int) (s : string) =
   (CCString.take idx s, CCString.drop idx s)
