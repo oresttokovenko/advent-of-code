@@ -14,10 +14,11 @@
     (82 + (-30)) % 100 = 52
     (52 + 48) % 100 = 0
 *)
+
 open Containers
 open CCIO
 
-let dial_start = 50
+let read_lines (filename : string) : string list = with_in filename read_lines_l
 
 module Direction = struct
   type t = Left | Right
@@ -35,12 +36,11 @@ let spin_dial acc { direction; distance } =
   | Direction.Left -> (acc + distance) mod 100
   | Direction.Right -> (acc - distance) mod 100
 
-let read_lines (filename : string) : string list = with_in filename read_lines_l
-
 let split_at (idx : int) (s : string) =
   (CCString.take idx s, CCString.drop idx s)
 
 let main () =
+  let dial_start = 50 in
   let _, result =
     read_lines "2025/day_01/input.txt"
     |> List.map (fun s -> split_at 1 s)
