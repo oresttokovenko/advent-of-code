@@ -37,7 +37,7 @@ This repository contains my code submissions for Advent of Code, showcasing my s
 
 ### Puzzle Inputs
 
-To conveniently fetch the puzzle inputs directly into your local setup, you can use the following utility script. Replace `2023` and `1` with the appropriate year and day's challenge you are working on. Ensure you have your session cookie in your `.zshrc` from the Advent of Code website to authenticate the request, assigned to `AOC_SESSION`.
+To conveniently fetch the puzzle inputs directly into your local setup, you can use the following utility script. Replace `2023` and `1` with the appropriate year and day's challenge you are working on. Ensure you have your session cookie in your `.env`file from the Advent of Code website to authenticate the request, assigned to `AOC_SESSION`.
 
 ```bash
 ./aoc_input.sh 2023 1
