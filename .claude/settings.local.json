@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(opam switch show:*)"
-    ],
-    "deny": [],
-    "ask": []
-  }
-}
